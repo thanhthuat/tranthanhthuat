@@ -271,7 +271,10 @@ function DataChart() {
       },
     },
   };
-  return <ApexCharts options={option.options} series={data} type='candlestick' height={350} />;
+  return  <>
+  <ApexCharts options={option.options} series={data} type='candlestick' height={350} />
+  <ApexCharts  options={option.options}  series={data} type="bar" height={160} />
+  </>
 }
 
 export default DataChart;
