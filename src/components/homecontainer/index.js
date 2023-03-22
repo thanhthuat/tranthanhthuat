@@ -32,12 +32,12 @@ const formatData = (vale, option) => {
         if (!option?.province) {
           return item;
         } else {
-          if (!option?.district) {
+          if (!option?.dictrict) {
             if (item.city == +option?.province) {
               return item;
             }
           } else {
-            if (item.city == +option?.province && item.district == +option?.district) {
+            if (item.city == +option?.province && item.district == +option?.dictrict) {
               return item;
             }
           }
