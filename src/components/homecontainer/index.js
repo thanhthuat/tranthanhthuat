@@ -50,7 +50,18 @@ const formatData = (vale, option) => {
 
 const HomeLayout = () => {
   const [valueSearch, setValueSearch] = useState({});
-  const [valueData, setValueData] = useState([]);
+  const [valueData, setValueData] = useState(Object.keys(dataJson)
+  .map((item) => {
+    return {
+      title: dataJson[item]?.title,
+      thumbnail: dataJson[item]?.thumbnail,
+      price: dataJson[item]?.price,
+      area: dataJson[item]?.area,
+      city: dataJson[item]?.city,
+      district: dataJson[item]?.district,
+      content: dataJson[item]?.content,
+    };
+  }));
 
   useEffect(() => {
     let obj = { ...valueSearch };
