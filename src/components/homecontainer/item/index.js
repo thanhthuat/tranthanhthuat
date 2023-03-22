@@ -41,7 +41,7 @@ const Item = ({ item }) => {
                 </div>{' '}
               </Col>
               <Col xs={12}>
-                <p>{item?.content}</p>{' '}
+                <p>*{item?.content}</p>{' '}
               </Col>
             </Row>
           </Col>

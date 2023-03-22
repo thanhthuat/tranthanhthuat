@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import provinceJson from '../../../api/data/tinh_tp.json' assert { type: 'json' };
 import dictrictJson from '../../../api/data/quan_huyen.json' assert { type: 'json' };
 
-
 const formatData = (vale) => {
   const data = Object.keys(vale).map((item) => {
     return { label: vale[item]?.name, value: vale[item]?.code };
@@ -66,11 +65,11 @@ const FormSearch = ({ handleValueSearch }) => {
     if (!province && !dictrictValue && !square && !price) {
       return;
     }
-    console.log("value")
+    console.log('value');
     let obj = {
       province: province,
       dictrict: dictrictValue,
-      square: square ?? '0-80' ,
+      square: square ?? '0-80',
       price: price ?? '0-10000000',
     };
     handleValueSearch(obj);
@@ -81,7 +80,7 @@ const FormSearch = ({ handleValueSearch }) => {
         <Container className='search-home'>
           <Row>
             <Col>
-              {' '}
+              Chọn tỉnh thành
               <Select
                 options={provinceOption}
                 onChange={handleChangeProvince}
@@ -90,6 +89,7 @@ const FormSearch = ({ handleValueSearch }) => {
             </Col>
             <Col>
               {' '}
+              Chọn quận/huyện
               <Select
                 options={dictrict}
                 placeholder='Chọn quận/huyện'
@@ -98,6 +98,7 @@ const FormSearch = ({ handleValueSearch }) => {
             </Col>
             <Col>
               {' '}
+              Chọn mức giá
               <Select
                 options={optionsPrice}
                 placeholder='Chọn mức giá'
@@ -105,6 +106,7 @@ const FormSearch = ({ handleValueSearch }) => {
               />
             </Col>
             <Col>
+              Chọn diện tích
               <Select
                 options={optionsSquare}
                 placeholder='Chọn diện tích'
@@ -112,9 +114,11 @@ const FormSearch = ({ handleValueSearch }) => {
               />
             </Col>
             <Col>
-              <button type='submit' className='btn-submit'>
-                Lọc tin
-              </button>
+              <div className='btn-content'>
+                <button type='submit' className='btn-submit'>
+                  Lọc tin
+                </button>
+              </div>
             </Col>
           </Row>
         </Container>

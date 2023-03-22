@@ -22,10 +22,14 @@
   .search-home {
     background-color: #c5d43a;
     padding: 50px 10px;
-    .btn-submit {
-      width: 100px;
-      border: none;
-      height: 100%;
+    .btn-content {
+      display: flex;
+      align-items: flex-end;
+      .btn-submit {
+        width: 100px;
+        border: none;
+        height: 36px;
+      }
     }
   }
   .content {
