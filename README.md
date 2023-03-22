@@ -11,3 +11,4 @@
 work component
 [compoents/Chart]
 [compoents/homecontainer]
+link project https://tranthanhthuat-thanhthuat.vercel.app/

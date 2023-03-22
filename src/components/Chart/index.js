@@ -256,6 +256,7 @@ function DataChart() {
       chart: {
         type: 'candlestick',
         height: 350,
+        id: 'candles',
       },
       title: {
         text: 'CandleStick Chart',
@@ -263,6 +264,8 @@ function DataChart() {
       },
       xaxis: {
         type: 'datetime',
+        labels: {
+          show: false,}
       },
       yaxis: {
         tooltip: {
@@ -271,9 +274,59 @@ function DataChart() {
       },
     },
   };
+
+  const option1 = {
+    options: {
+      chart: {
+        height: 160,
+        type: 'bar',
+        brush: {
+          enabled: true,
+          target: 'candles'
+        },
+       
+      },
+      dataLabels: {
+        enabled: false
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '80%',
+          colors: {
+            ranges: [{
+              from: -1000,
+              to:  6620,
+              color: '#F15B46'
+            }, {
+              from: 1,
+              to: 6740,
+              color: '#FEB019'
+            }],
+      
+          },
+        }
+      },
+      stroke: {
+        width: 0
+      },
+      xaxis: {
+        type: 'datetime',
+        axisBorder: {
+          offsetX: 13
+        }
+      },
+      yaxis: {
+        labels: {
+          show: false
+        }
+      }
+    },
+  
+    }
+  
   return  <>
   <ApexCharts options={option.options} series={data} type='candlestick' height={350} />
-  <ApexCharts  options={option.options}  series={data} type="bar" height={160} />
+  <ApexCharts  options={option1.options}  series={data} type="bar" height={160} />
   </>
 }
 
