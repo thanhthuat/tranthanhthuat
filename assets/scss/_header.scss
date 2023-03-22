@@ -1,0 +1,53 @@
+@use './index' as *;
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 600;
+
+  @include flex(center, unset);
+
+  img {
+    margin-right: 10px;
+    width: 50px;
+
+    @include mobile {
+      width: 30px;
+      margin-right: 0;
+    }
+  }
+}
+
+.header {
+  min-height: 700px;
+  .search-home {
+    background-color: #c5d43a;
+    padding: 50px 10px;
+    .btn-submit {
+      width: 100px;
+      border: none;
+      height: 100%;
+    }
+  }
+  .content {
+    margin-top: 100px;
+    padding: 10px;
+    .item-home {
+      border: 1px solid red;
+      &__img {
+        height: 200px;
+        width: 100%;
+      }
+      &__content {
+        background-color: #d4b03abb;
+      }
+      .price {
+        color: #169431;
+      }
+      .area {
+        margin-left: 15px;
+        display: inline-block;
+        color: #291694;
+      }
+    }
+  }
+}
