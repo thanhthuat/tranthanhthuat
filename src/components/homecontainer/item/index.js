@@ -15,7 +15,7 @@ const Item = ({ item }) => {
   return (
     <div>
       <Container className='item-home'>
-        <Row>
+        <Row  className='item-bg'>
           <Col xs={3}>
             <img className='item-home__img' src={item?.thumbnail} />
           </Col>
