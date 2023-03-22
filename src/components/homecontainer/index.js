@@ -24,9 +24,9 @@ const formatData = (vale, option) => {
         +option?.square.split('-')[1]
       );
       if (
-        +option?.square.split('-')[0] < +item.area &&
+        +option?.square.split('-')[0] <= +item.area &&
         +item.area <= +option?.square.split('-')[1] &&
-        +option?.price.split('-')[0] < +item.price &&
+        +option?.price.split('-')[0] <= +item.price &&
         +item.price <= +option?.price.split('-')[1]
       ) {
         if (!option?.province) {
